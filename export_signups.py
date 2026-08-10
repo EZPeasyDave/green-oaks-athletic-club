@@ -108,7 +108,9 @@ def main():
     custom_columns = []
     try:
         for session in stripe.checkout.Session.list(limit=100).auto_paging_iter():
-            row, custom = flatten(session)
+            # to_dict() recurses, converting the whole StripeObject tree into plain
+            # dicts. StripeObject supports [] but not .get(), so convert at the boundary.
+            row, custom = flatten(session.to_dict())
             for column in custom:
                 if column not in custom_columns:
                     custom_columns.append(column)
