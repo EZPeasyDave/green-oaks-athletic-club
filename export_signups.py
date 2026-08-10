@@ -171,27 +171,31 @@ def summarize(rows, custom_columns):
         )
 
     empty = [r for r in rows if not any(r.get(c) for c in custom_columns)]
-    if not empty:
-        print("\n  Every session carried at least one custom field.")
+    empty_paid = [r for r in empty if r["payment_status"] == "paid"]
+    abandoned = len(empty) - len(empty_paid)
+
+    # Only PAID sessions missing data are a problem. Abandoned carts have no
+    # answers by definition -- listing them individually buries the real signal.
+    if abandoned:
+        print(
+            f"\n  {abandoned} abandoned cart(s) with no custom fields -- this is NORMAL.\n"
+            "  Stripe opens a session the moment someone clicks the button, before\n"
+            "  they fill anything in. They did not pay and are not on your roster."
+        )
+
+    if not empty_paid:
+        print("\n  OK: every PAID session captured its custom fields. Roster is complete.")
         return
 
-    empty_paid = [r for r in empty if r["payment_status"] == "paid"]
-    print(f"\n  {len(empty)} session(s) had NO custom field data:")
-    for r in empty:
-        print(
-            f"    {r['created']:<16} {r['payment_status']:<12} "
-            f"{r['customer_email'] or '(no email)':<32} {r['session_id']}"
-        )
+    verb = "was" if len(empty_paid) == 1 else "were"
     print(
-        "\n  Unpaid/expired ones are normal -- Stripe creates a session the moment\n"
-        "  someone clicks the button, before they fill anything in (abandoned carts)."
+        f"\n  *** {len(empty_paid)} PAID session(s) {verb} missing custom field data. That is the\n"
+        "  real red flag -- money collected without the child's info. Follow up:"
     )
-    if empty_paid:
-        verb = "was" if len(empty_paid) == 1 else "were"
+    for r in empty_paid:
         print(
-            f"\n  *** {len(empty_paid)} of these {verb} PAID with no custom fields. That is the\n"
-            "  real red flag -- it means that payment link collected money without\n"
-            "  capturing the child's info. Follow up with those parents directly."
+            f"    {r['created']:<16} {r['customer_email'] or '(no email)':<32} "
+            f"{r['session_id']}"
         )
 
 
