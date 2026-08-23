@@ -1,9 +1,13 @@
 # Grades 3–5 Welcome Email Draft - 2026-08-23
 
 *For Coach Izenstark to send to each family after they register for the grades
-3–5 session (Oct 16 – Nov 20). Its real job is the last section — checkout no
-longer asks about allergies or medical needs, so this email is where that
-information gets collected.*
+3–5 session (Oct 16 – Nov 20).*
+
+> **Updated later on 2026-08-23:** phone moved to Stripe's built-in collection,
+> which freed the third custom field for "Anything we should know?" (optional).
+> Checkout now asks too, so this email's medical ask is a **backstop rather than
+> the only channel**. Keep it — optional fields get skipped, and parents often
+> remember the inhaler after they've paid.
 
 ---
 
@@ -75,27 +79,27 @@ greenoaksathleticclub.com
 
 ---
 
-## Why the reply section matters
+## Why the reply section stays
 
-The K–2 payment link asked about allergies at checkout. The 3–5 link doesn't —
-the third custom field is now Parent Cell Phone, and Stripe caps custom fields
-at three.
+Checkout's notes field is **optional**, so plenty of parents will skip past it
+in a hurry to pay — and medical details are exactly the thing people remember
+afterwards. The email ask catches those. It also routes detail into Izenstark's
+inbox rather than a payments system, which is where Stripe's own documentation
+says health information should not live.
 
-That trade is defensible: Stripe's own documentation says not to collect
-personal, protected, or sensitive data in custom fields, and a coach needs a
-reachable phone number more than he needs a text box. **But it means this email
-is now the only place medical information gets collected for grades 3–5.** If
-this email doesn't go out, nobody knows which kid has the EpiPen.
+## Final checkout configuration (verified live 2026-08-23)
 
-Replies land in Izenstark's normal inbox rather than a payments system, which
-is where health information belongs.
+| Field | State |
+|---|---|
+| Email | required |
+| Phone | required — Stripe built-in, lands in the roster's **Parent Phone** column |
+| Child Name | required |
+| Current Grade | required dropdown |
+| Anything we should know? | optional |
+
+Payment cap: **50** — no test charge was run on this link, so no +1 needed.
 
 ## Notes for Dave
 
 - **No student PII in this document** — no names, no grades. Safe in the repo.
 - Dates cross-checked against the live site and the 3–5 flyer.
-- If you'd rather not depend on an email going out, the alternative is moving
-  the phone number to Stripe's **built-in** phone collection (Options →
-  "Require customers to provide a phone number"). That frees the third custom
-  field to go back to "Anything we should know?" — you'd get both. See the
-  note in the session summary.
