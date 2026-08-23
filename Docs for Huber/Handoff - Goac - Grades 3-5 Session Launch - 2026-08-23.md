@@ -11,7 +11,7 @@ The next session starts from a working state, not a half-built one.*
 | Stripe 3–5 payment link | Live, all fields correct, cap 50 |
 | Flyer + social cards | Built, rendered, public URLs verified 200 |
 | Roster Worker | Split by session, deployed, **now on GitHub** |
-| Parent emails | Two drafted; **neither has been sent** |
+| Parent emails | Both drafted and **handed to Izenstark 2026-08-23** |
 
 ## Grades 3–5 session
 
@@ -83,28 +83,26 @@ passes through as typed. 15 test assertions, all passing (`node test/roster.test
 3–5 has no `plink_` ID yet because **a session gets no group until its first paid
 signup**. Once one lands, read the ID off the roster page and add it.
 
-## Emails — drafted, NOT sent
+## Emails — handed off
 
-Both are written and ready. **Neither has gone out.**
+**Dave shared both drafts with Izenstark on 2026-08-23, and Izenstark has them.**
+Do not re-raise this as an open item.
 
 - `Docs for Huber/Message to Izenstark - Two Emails to Send - 2026-08-23.md`
   — one paste-ready message carrying both, also in Obsidian.
 - Individual drafts: `K-2 Schedule Email Draft - 2026-08-23.md`,
   `Grades 3-5 Welcome Email Draft - 2026-08-23.md`.
 
-**The K–2 one is time-sensitive: that session starts Friday Aug 28**, and its
-~48 paid families currently have the weekly lineup nowhere, since the schedule
-came off the site. Dave spoke to Izenstark on 2026-08-23 and reported "all good,"
-so this may already be handled — **confirm before re-raising it.**
+What remains is Izenstark actually sending them to parents, which is his to do
+and outside this repo. The K–2 one is the time-sensitive one — that session
+starts Friday Aug 28.
 
-Sending is manual. The Gmail MCP connector is installed but **unauthenticated**
-(only the OAuth-start tools are exposed), and AgentMail's domain is burned.
+Note for any future send: it is manual. The Gmail MCP connector is installed but
+**unauthenticated** (only the OAuth-start tools are exposed), and AgentMail's
+domain is burned.
 
 ## Dangling
 
-- **The 3–5 welcome email is a safety net that depends on being sent.** Checkout's
-  notes field is optional, so skipped answers are expected. If that email never
-  goes out, allergy and medication info for 3–5 is collected nowhere.
 - **Flyer/social cards have not been handed to the school's social team** — URLs
   were delivered to Dave at close. Whoever posts them: link to
   `greenoaksathleticclub.com`, never the raw Stripe URL, which dead-ends at the cap.
