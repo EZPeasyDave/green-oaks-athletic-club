@@ -304,7 +304,7 @@ footer p+p{margin-top:.4rem;opacity:.75}
     </div>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="#interest">Grades 3–5 · Registration info</a>
+      <a class="btn btn-primary" href="#interest">Register for Grades 3–5</a>
       <a class="btn btn-ghost" href="#schedule">See the schedule</a>
     </div>
 
@@ -422,18 +422,14 @@ footer p+p{margin-top:.4rem;opacity:.75}
 
 <section id="interest" class="final">
   <div class="wrap">
-    <span class="pill">Grades 3–5 · Opening soon</span>
-    <h2 class="title">Registration opens shortly</h2>
-    <p class="lead">The grades 3–5 session runs six Fridays starting October 16 — $120 for all six weeks, limited to 50 kids. <strong>Online registration isn't open just yet.</strong> Email Coach Izenstark to be first in line, or add your name to the interest list and we'll tell you the moment it opens.</p>
+    <span class="pill">Grades 3–5 · Now enrolling</span>
+    <h2 class="title">Ready to claim a spot?</h2>
+    <p class="lead">Register your child for the grades 3–5 session and pay the $120 in one quick step — six Fridays of sports starting October 16. You'll get an emailed receipt right away. Spots are limited to 50, so don't wait.</p>
     <div class="cta-row">
-      <!-- REGISTRATION PAUSED 2026-08-23 — verifying the Stripe custom fields
-           (child name / grade / allergies) before taking any money. To restore,
-           swap this button back to:
-           <a class="btn btn-primary" href="https://buy.stripe.com/28EfZ98kBgrhdvI5nO63K01" target="_blank" rel="noopener">Register &amp; Pay — $120</a>
-           and restore PAY in the chat widget below. -->
-      <a class="btn btn-primary" href="mailto:izenstark@ogschool.org">Email Coach Izenstark</a>
-      <a class="btn btn-ghost" href="https://forms.gle/Ezv8wUkqTmn2udZW7" target="_blank" rel="noopener">Join the interest list</a>
+      <a class="btn btn-primary" href="https://buy.stripe.com/28EfZ98kBgrhdvI5nO63K01" target="_blank" rel="noopener">Register &amp; Pay — $120</a>
+      <a class="btn btn-ghost" href="mailto:izenstark@ogschool.org">Email Coach Izenstark</a>
     </div>
+    <p style="margin-top:16px;font-size:.95rem;opacity:.85">Session full? <a href="https://forms.gle/Ezv8wUkqTmn2udZW7" target="_blank" rel="noopener">Join the waitlist/interest list →</a></p>
   </div>
 </section>
 
@@ -486,9 +482,7 @@ footer p+p{margin-top:.4rem;opacity:.75}
 /* Club Helper — self-contained, retrieval-only. No LLM, no network, no storage.
    It can only surface answers written in KB below; anything unmatched falls back. */
 (function(){
-  /* REGISTRATION PAUSED 2026-08-23 — PAY intentionally unused while the Stripe
-     custom fields are verified. Restore by putting the buy.stripe.com link back
-     into the signup answer below. */
+  var PAY="https://buy.stripe.com/28EfZ98kBgrhdvI5nO63K01";
   var WAITLIST="https://forms.gle/Ezv8wUkqTmn2udZW7";
   var COACH="<a href='mailto:izenstark@ogschool.org'>email Coach Izenstark</a>";
   var KB=[
@@ -506,7 +500,7 @@ footer p+p{margin-top:.4rem;opacity:.75}
      follow:["signup","schedule"]},
     {id:"signup",label:"How to sign up",
      keywords:["sign","signup","sign up","register","registration","registering","enroll","enrollment","enrolling","join","joining","spot","spots","reserve","save a spot","form","apply","get in","waitlist","wait list","full","is it full","session full","sold out","spots left","any spots","any spots left","spots available","still open","still available","availability","openings","any room","room left","have room","still have room","got room","how many spots"],
-     answer:"<strong>Online registration for grades 3–5 isn't open quite yet</strong> — we're putting the finishing touches on it. Two ways to be first in line:<br>"+COACH+" to let him know you want a spot, or <a href='"+WAITLIST+"' target='_blank' rel='noopener'>add your name to the interest list</a> and we'll tell you the moment it opens. Spots are limited to <strong>50 kids</strong>.",
+     answer:"Register and pay in one quick step right here — no separate form:<br><a href='"+PAY+"' target='_blank' rel='noopener'>Grades 3–5 · register &amp; pay ($120) →</a><br>You'll be asked for your child's name and current grade as you check out. Spots are limited to <strong>50 kids</strong>. If the session is full, you can <a href='"+WAITLIST+"' target='_blank' rel='noopener'>join the waitlist/interest list</a> instead.",
      follow:["cost","who","contact"]},
     {id:"who",label:"Who can join",
      keywords:["who","grade","grades","what grade","which grade","what grades","which grades","grade level","grade levels","age","ages","age range","what age","what ages","how old","old enough","too old","too young","eligible","eligibility","can my","is my","does my","kindergarten","kinder","k2","k 2","first grade","second grade","third grade","fourth grade","fifth grade","1st","2nd","3rd","4th","5th","1st grade","2nd grade","3rd grade","4th grade","5th grade","grade 1","grade 2","grade 3","grade 4","grade 5","3 5","3rd 5th","third through fifth","older","older kid","older kids","older child","big kids","younger","my son","my daughter","my child","my kid","my kids","both kids","sibling","siblings","anything for older"],
