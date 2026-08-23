@@ -126,11 +126,20 @@ Two things baked into that draft worth preserving in future outreach:
   rather than inventing urgency. It's true, and this list has already been let
   down once.
 
+## How this club actually fills — don't over-invest in marketing
+
+Dave, 2026-08-23: **the spring 2026 session hit its cap by word of mouth, before
+the flyer or social posts ever went out.** Parents told other parents.
+
+The flyer and both social cards are built and their URLs were handed to
+Izenstark, who has them if he wants them. But treat promo assets as nice-to-have,
+not as the thing that fills a session. The practical consequence: **a session can
+fill faster than the site can be updated**, which is why the payment-link cap and
+a working waitlist path matter more than any of the artwork. Also captured in
+project memory.
+
 ## Dangling
 
-- **Flyer/social cards have not been handed to the school's social team** — URLs
-  were delivered to Dave at close. Whoever posts them: link to
-  `greenoaksathleticclub.com`, never the raw Stripe URL, which dead-ends at the cap.
 - **The multi-club Google Form work is untouched** — that is the OGS school-wide
   thread from the 2026-08-22 handoff, still blocked on the club list with caps,
   and still needs the `RefreshChoices` script copied off the school Mac.
