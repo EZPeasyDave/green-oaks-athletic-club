@@ -138,6 +138,42 @@ fill faster than the site can be updated**, which is why the payment-link cap an
 a working waitlist path matter more than any of the artwork. Also captured in
 project memory.
 
+## Late additions — refund filtering, and K–2 is at 50
+
+Dave ran a live test charge on the 3–5 link and refunded it. Two consequences,
+both handled:
+
+- **Cap bumped 50 → 51.** A completed session counts against the limit and a
+  refund does **not** return the slot. Left at 50 it would have silently stopped
+  one real family short.
+- **The roster now excludes fully refunded payments** (Worker version
+  `303b8bfd`, commit `7d15d4e`). One call to `/v1/refunds`, summing refunded
+  amounts per `payment_intent`. Only *full* refunds drop a row — a partial
+  goodwill refund leaves an enrolled child, and hiding them from their coach
+  would be the worse bug. Covered by the restricted key's existing
+  **"Charges and Refunds: Read"** permission; verified live.
+- **Grades 3–5 is labeled** (`plink_1U7c0F0UMJFLzZebUH676YFp`). Its card is
+  currently absent because the refunded test was its only payment — correct, and
+  it reappears with the first real signup.
+
+**It excluded 2 payments, not 1** — Izenstark's July K–2 test had been sitting in
+that roster as a phantom signup since launch.
+
+### K–2 is full, and that's a known, accepted state
+
+Roster reads **50 paid, $6,000.00 collected** (exactly 50 × $120) against a cap
+of 51 — the 51st was Izenstark's test. **The K–2 link deactivated because it hit
+its limit, not because anyone switched it off.**
+
+So the "a couple of spots are still open" line — live on the site above the
+footer, and an optional paragraph in both the K–2 schedule email and the spring
+waitlist outreach — is not supported by the payment data.
+
+**Dave's call, 2026-08-23: leave it as-is.** Izenstark knows his own gym
+capacity better than the payment counter does, and taking a couple over 50 is
+his to decide. **Do not re-raise this or "correct" the site copy** unless
+Izenstark says he's actually closed.
+
 ## Dangling
 
 - **The multi-club Google Form work is untouched** — that is the OGS school-wide
