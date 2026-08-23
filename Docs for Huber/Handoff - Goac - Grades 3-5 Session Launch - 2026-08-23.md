@@ -101,6 +101,31 @@ Note for any future send: it is manual. The Gmail MCP connector is installed but
 **unauthenticated** (only the OAuth-start tools are exposed), and AgentMail's
 domain is burned.
 
+## Spring waitlist outreach — done and handed off
+
+Late in the session Dave remembered the spring 2026 waitlist: kids turned away
+from that session who are **now** in grades 3–5. Worth chasing — they already
+asked once.
+
+The grade rollover is the trap. Spring 2026 was the 2025–26 school year, so a
+child eligible for 3–5 **now** was in **grade 2, 3, or 4** last spring, and
+anyone who was in grade 5 has aged out into 6th. Dave ran a Gemini prompt
+against his Oak Grove Workspace to pull the list and reconciled current grades
+himself.
+
+`Docs for Huber/Spring Waitlist Outreach Email Draft - 2026-08-23.md` is the
+resulting email. **Sent to Izenstark to tweak and BCC**; parent addresses went
+to him in a separate message. Nothing outstanding here.
+
+Two things baked into that draft worth preserving in future outreach:
+
+- **Link to `greenoaksathleticclub.com`, never the raw Stripe URL.** Emails get
+  forwarded and read weeks later, and the payment link deactivates at the cap —
+  a dead end costs a family.
+- **State the real mechanic** ("capped at 50, first come, I can't hold a spot")
+  rather than inventing urgency. It's true, and this list has already been let
+  down once.
+
 ## Dangling
 
 - **Flyer/social cards have not been handed to the school's social team** — URLs
